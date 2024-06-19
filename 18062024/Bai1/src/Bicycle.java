@@ -12,7 +12,6 @@ public class Bicycle extends Vehicle {
     */
     @Override
     public void speedUp() {
-        this.speed = 320;
         System.out.println("Bicycle speed is " + this.speed + "Km/h");
     }
 }
