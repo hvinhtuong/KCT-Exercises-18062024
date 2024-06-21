@@ -20,7 +20,7 @@ public class Bai3 {
     }
 
     public static void main(String[] args) {
-        int[] str = new int[] {1,2,3,4,5,6,7,8,9};
+        int[] str = new int[] {1,2,3,4,5,6,7,8,9, 0};
         System.out.println("Your array is: " + Arrays.toString(str));
         countOdd(str);
     }

@@ -7,8 +7,7 @@ public class Bai2 {
         String str = "hello";
     String str1 = "";
         for (int i = 0; i < str.length(); i++) {
-            str1 += String.valueOf(str.charAt(i));
-            str1 += String.valueOf(str.charAt(i));
+            str1 += String.valueOf(str.charAt(i)) + String.valueOf(str.charAt(i));
         }
         System.out.print("Your original string is: " + str + "\n");
         System.out.print("Result string is: " + str1);

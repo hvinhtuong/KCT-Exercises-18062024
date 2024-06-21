@@ -5,7 +5,8 @@ public class Bai4 {
     public static void removeRepeatCharacters(StringBuilder str) {
         int[] arr = new int[str.length()];
         for (int i = 0; i < str.length()-1; i++) {
-            for (int j = 1; j < str.length()-2; j++) {
+            //for (int j = 1; j < str.length(); j++) {
+            for (int j = str.length() - 1; j >= 0; j--) {
                 if ((str.charAt(i) == str.charAt(j)) && i != j) {
                     str.deleteCharAt(j);
                 }
@@ -13,9 +14,12 @@ public class Bai4 {
         }
     }
     public static void main(String[] args) {
-        StringBuilder str = new StringBuilder("characters");
+        //Original string
+        StringBuilder str = new StringBuilder("ccharactershh");
         System.out.println("Your string: " + str);
+        //Call removeRepeatCharacters method
         removeRepeatCharacters(str);
+        //Show result string
         System.out.println("Your result: " + str);
     }
 }

@@ -24,7 +24,7 @@ public class Bai1 {
     }
 
     /*
-    Count number appear
+    Count number appear of a number in your array
      */
     public static void add(Map<Integer, Integer> map, int num) {
         if (map.containsKey(num)) {
