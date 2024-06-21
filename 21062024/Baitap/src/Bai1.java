@@ -14,29 +14,13 @@ public class Bai1 {
     public static int count(int[] str) {
         Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
         for (int i = 0; i < str.length; i++) {
-            add(map, str[i]);
+            map.put(str[i], i);
         }
         int count = 0;
         for (Integer key : map.keySet()) {
                 count += key;
         }
         return count;
-    }
-
-    /*
-    Count number appear of a number in your array
-     */
-    public static void add(Map<Integer, Integer> map, int num) {
-        if (map.containsKey(num)) {
-            int count = map.get(num) + 1;
-            map.put(num, count);
-        } else {
-            map.put(num, 1);
-        }
-    }
-
-    public static void typeArray() {
-
     }
 
     public static void main(String[] args) {

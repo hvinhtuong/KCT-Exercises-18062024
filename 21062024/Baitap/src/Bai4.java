@@ -15,7 +15,7 @@ public class Bai4 {
     }
     public static void main(String[] args) {
         //Original string
-        StringBuilder str = new StringBuilder("ccharactershh");
+        StringBuilder str = new StringBuilder("cccccccccccharactershhhhhhh");
         System.out.println("Your string: " + str);
         //Call removeRepeatCharacters method
         removeRepeatCharacters(str);
