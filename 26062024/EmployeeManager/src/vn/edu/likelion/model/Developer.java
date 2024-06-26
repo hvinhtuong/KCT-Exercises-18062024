@@ -28,7 +28,7 @@ public class Developer extends NhanVien{
      */
     @Override
     public void displayInfor() {
-        System.out.println("Manager Name: " + name);
+        System.out.println("Developer Name: " + name);
         System.out.println("Base Salary: $" + baseSalary);
         System.out.println("Overtime Hours: $" + overtime);
         System.out.println("Hourly Rate: $"+ rate);
