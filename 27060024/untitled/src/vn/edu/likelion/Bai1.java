@@ -7,6 +7,9 @@ import java.util.Scanner;
 
 public class Bai1 {
 
+    /*
+     * filterZero - Remove all Zero to the right of array
+     */
     public static void filterZero(int[] num1) {
         int[] num2 = new int[num1.length];
         int count = 0;
