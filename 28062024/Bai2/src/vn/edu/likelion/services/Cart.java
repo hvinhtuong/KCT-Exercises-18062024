@@ -3,11 +3,11 @@ package vn.edu.likelion.services;
 import vn.edu.likelion.model.Product;
 
 class Cart {
-    Product[] items; // Mảng chứa các sản phẩm
-    int itemCount = 0; // Số lượng sản phẩm hiện tại
+    Product[] items;
+    int itemCount = 0;
 
     public Cart(int capacity) {
-        items = new Product[capacity]; // Khởi tạo mảng với sức chứa
+        items = new Product[capacity];
     }
 
      /*

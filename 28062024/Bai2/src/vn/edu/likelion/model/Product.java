@@ -4,7 +4,7 @@ public class Product {
     int productId;
     String productName;
     double price;
-    static String storeName = "ABC Store"; // Tên cửa hàng (static)
+    static String storeName = "ABC Store";
 
     public Product(int productId, String productName, double price) {
         this.productId = productId;
