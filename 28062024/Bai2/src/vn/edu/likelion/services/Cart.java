@@ -17,7 +17,7 @@ class Cart {
         if (itemCount < items.length) {
             items[itemCount++] = product;
         } else {
-            System.out.println("Giỏ hàng đã đầy!");
+            System.out.println("You have already bough a lot of items");
         }
     }
 
