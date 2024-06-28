@@ -2,94 +2,33 @@ package vn.edu.likelion.services;
 
 import vn.edu.likelion.model.Product;
 
-import java.util.ArrayList;
-import java.util.List;
+class Cart {
+    Product[] items; // Mảng chứa các sản phẩm
+    int itemCount = 0; // Số lượng sản phẩm hiện tại
 
-import static vn.edu.likelion.services.ShoppingApp.products;
-
-public class Cart {
-    int stt;
-    int productId;
-    String productName;
-    double price;
-    String storeName;
-    static List<Cart> Carts = new ArrayList<>();
-
-    public Cart(int stt, int productId, String productName, double price, String storeName) {
-        this.stt = stt;
-        this.productId = productId;
-        this.productName = productName;
-        this.price = price;
-        this.storeName = storeName;
+    public Cart(int capacity) {
+        items = new Product[capacity]; // Khởi tạo mảng với sức chứa
     }
 
-    public static void addToCart(int stt, int id, String name, double price, String storeName) {
-        for (Product c: products) {
-            if (c.getProductId() == id) {
-                Carts.add(new Cart(Carts.size() + 1, c.getProductId(), c.getProductName(), c.getPrice(), "ABC Bakery Store"));
-                System.out.println("Add item Successful.");
-            } else {
-                System.out.println("Item does not exits.");
-                return;
-            }
+     /*
+      * addToCart - Add item to Cart
+      */
+    void addToCart(Product product) {
+        if (itemCount < items.length) {
+            items[itemCount++] = product;
+        } else {
+            System.out.println("Giỏ hàng đã đầy!");
         }
     }
 
     /*
-     * totalPrice - Count total Price in cart
+     * totalPrice - Count total Price of Cart
      */
-    public static void totalPrice() {
-        double totalPrice = 0;
-        for (Cart c: Carts) {
-            totalPrice += c.price;
+    double totalPrice() {
+        double total = 0;
+        for (int i = 0; i < itemCount; i++) {
+            total += items[i].getPrice();
         }
-        System.out.println("TOTAL CART: $" + totalPrice);
-    }
-
-    /*
-     * totalsize - Get size of Cart
-     */
-    public int totalSize() {
-        return Carts.size();
-    }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getStoreName() {
-        return storeName;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setStoreName(String storeName) {
-        this.storeName = storeName;
-    }
-
-    public int getStt() {
-        return stt;
-    }
-
-    public void setStt(int stt) {
-        this.stt = stt;
+        return total;
     }
 }
