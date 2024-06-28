@@ -2,13 +2,12 @@ package vn.edu.likelion.model;
 
 public abstract class Vehicle {
     String name;
-    static int vehicleCount;
+    static int vehicleCount = 0;
     final int id;
 
-    public Vehicle(String name, int id) {
+    public Vehicle(String name) {
         this.name = name;
-        this.id = id;
-        vehicleCount++;
+        this.id = ++vehicleCount;
     }
 
     abstract void move();

@@ -1,22 +1,15 @@
 package vn.edu.likelion.model;
 
-public class Car extends Vehicle{
+class Car extends Vehicle {
     int numberOfDoors;
 
-    public Car(String name, int id) {
-        super(name, id);
+    public Car(String name, int numberOfDoors) {
+        super(name);
+        this.numberOfDoors = numberOfDoors;
     }
 
     @Override
     void move() {
-        System.out.println("Car is moving...");
-    }
-
-    public int getNumberOfDoors() {
-        return numberOfDoors;
-    }
-
-    public void setNumberOfDoors(int numberOfDoors) {
-        this.numberOfDoors = numberOfDoors;
+        System.out.println("Car "+ id + " is moving.");
     }
 }
