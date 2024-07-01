@@ -23,9 +23,11 @@ public class CourseApp implements ICourseOnline {
     private void addData() {
         courses.add(new CourseOnline(101, "Basic Java", "Tran Anh Duong", 250, "Google Meet", "6 months"));
         courses.add(new CourseOnline(102, "Python Ultimate", "Chu Van Bien", 550, "Zoom", "3 months"));
-        courses.add(new CourseOnline(103, "AWS Foundational", "Jonathan Bear", 250, "Udemy.com", "6 months"));
+        courses.add(new CourseOnline(103, "AWS Foundational", "Jonathan Bear", 280, "Udemy.com", "6 months"));
+        courses.add(new CourseOnline(104, "QSTB Testing Master", "Jesica Wick", 320, "Coursera.com", "5 months"));
         students.add(new Student(1, "Tuong Ho", 21, "Basic Java", 101));
         students.add(new Student(2, "Anh Duong", 17, "AWS Foundational", 102));
+        students.add(new Student(3, "Thanh Ben", 20, "QSTB Testing Master", 104));
     }
 
      /*
@@ -83,19 +85,19 @@ public class CourseApp implements ICourseOnline {
       * displayStudentbyId - display student via Id
       */
     public void displayStudentbyId(int id) {
-        System.out.println("Students in Course " + id + ": ");
-        System.out.println("STT | ID | Student Name | Age |  Course");
+        System.out.println("Students with ID = " + id + ": ");
+        System.out.println(" ID | Student Name | Age |  Course");
         System.out.println("---------------------------------------------------");
         boolean found = false; // Check found student in course
         for (Student c : students) {
-            if (c.getCourseId() == id) {
-                System.out.printf("%-3d| %-3d| %-15s | %-3d | %-15s\n",
-                        studentIdCounter++, c.getId(), c.getName(), c.getAge(), c.getCourseName());
+            if (c.getId() == id) {
+                System.out.printf("%-3d| %-15s | %-3d | %-15s\n",
+                        c.getId(), c.getName(), c.getAge(), c.getCourseName());
                 found = true;
             }
         }
         if (!found) {
-            System.out.println("No students found in this course.");
+            System.out.println("Student not found.");
         }
     }
 
@@ -136,7 +138,7 @@ public class CourseApp implements ICourseOnline {
                     app.displayStudent();
                     break;
                 case 4: // List student via course Id
-                    System.out.print("Enter course id: ");
+                    System.out.print("Enter Student id: ");
                     id = app.scanner.nextInt();
                     app.scanner.nextLine();
                     app.displayStudentbyId(id);
