@@ -1,6 +1,6 @@
 package vn.edu.likelioon.models;
 
-public class CourseOnline extends vn.edu.likelioon.models.Course {
+public class CourseOnline extends Course{
     private String platform;
     private String period;
 
