@@ -15,24 +15,6 @@ public class ClassroomManager implements ClassroomManagement {
     }
 
     @Override
-    public void removeClassroom(String classroomId) {
-        classrooms.removeIf(classroom -> classroom.getClassroomId() == Integer.parseInt(classroomId));
-    }
-
-    @Override
-    public void updateClassroom(Classroom updatedClassroom) {
-        Classroom existingClassroom = getClassroomById(String.valueOf(updatedClassroom.getClassroomId()));
-        if (existingClassroom != null) {
-            existingClassroom.setStudents(updatedClassroom.getStudents());
-            existingClassroom.setTeacher(updatedClassroom.getTeacher());
-            existingClassroom.setStatus(updatedClassroom.getStatus());
-            existingClassroom.setStartDate(updatedClassroom.getStartDate());
-        } else {
-            throw new IllegalArgumentException("Lớp học không tồn tại!");
-        }
-    }
-
-    @Override
     public Classroom getClassroomById(String classroomId) {
         return classrooms.stream()
                 .filter(classroom -> classroom.getClassroomId() == Integer.parseInt(classroomId))
@@ -45,12 +27,16 @@ public class ClassroomManager implements ClassroomManagement {
         return classrooms;
     }
 
-    // Thêm phương thức kiểm tra số lượng học viên trong lớp
+     /*
+      * isClassroomFull - Check max student in class for start
+      */
     public boolean isClassroomFull(Classroom classroom) {
         return classroom.getStudents().size() >= 4;
     }
 
-    // Thêm phương thức bắt đầu lớp học
+     /*
+      * startClassroom - Start a class
+      */
     public void startClassroom(String classroomId) {
         Classroom classroom = getClassroomById(classroomId);
         if (classroom != null && !isClassroomFull(classroom)) {

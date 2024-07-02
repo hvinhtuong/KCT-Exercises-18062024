@@ -8,14 +8,14 @@ public class Classroom {
     private static int nextClassroomId = 1;
     private int classroomId;
     private List<Student> students;
-    private Teacher teacher;
+    private List<Teacher> teachers;
     private String status;
     private LocalDate startDate;
 
-    public Classroom(int classroomId, List<Student> students, Teacher teacher, String status, LocalDate startDate) {
+    public Classroom(int classroomId, List<Student> students, List<Teacher> teachers, String status, LocalDate startDate) {
         this.classroomId = classroomId;
         this.students = students;
-        this.teacher = teacher;
+        this.teachers = teachers;
         this.status = status;
         this.startDate = startDate;
     }
@@ -28,8 +28,8 @@ public class Classroom {
         return students;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
+    public List<Teacher> getTeacher() {
+        return teachers;
     }
 
     public String getStatus() {
@@ -40,12 +40,20 @@ public class Classroom {
         return startDate;
     }
 
-    public Classroom(Teacher teacher) {
-        this(Classroom.nextClassroomId++, new ArrayList<>(), teacher, "Chưa bắt đầu", null);
+    public Classroom(Teacher teacher1, Teacher teacher2) {
+        this.classroomId = nextClassroomId++;
+        this.students = new ArrayList<>();
+        this.teachers = new ArrayList<>();
+        this.teachers.add(teacher1);
+        this.teachers.add(teacher2);
+        this.status = "Chưa bắt đầu";
+        this.startDate = null;
+        teacher1.addTeachingClass(this);
+        teacher2.addTeachingClass(this);
     }
 
     public boolean isFull() {
-        return (students.size() == 1);
+        return (students.size() == 10);
     }
 
     public void addStudent(Student student) {
@@ -64,8 +72,8 @@ public class Classroom {
         this.students = students;
     }
 
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+    public void setTeacher(List<Teacher> teachers) {
+        this.teachers = teachers;
     }
 
     public void setStatus(String status) {

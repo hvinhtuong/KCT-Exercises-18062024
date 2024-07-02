@@ -18,14 +18,14 @@ public class Main {
     public static void main(String[] args) {
 
         // Add Teacher
-        teachers.add(new Teacher("Chu Văn Biên, Cao Bá Quát"));
-        teachers.add(new Teacher("Trần Sỹ Hùng, Chu Văn Biên"));
-        teachers.add(new Teacher("Cao Bá Quát, Trần Sỹ Hùng"));
+        teachers.add(new Teacher("Chu Văn Biên"));
+        teachers.add(new Teacher("Trần Sỹ Hùng"));
+        teachers.add(new Teacher("Cao Bá Quát"));
 
         // Add Classroom
-        Classroom classroom1 = new Classroom(teachers.get(0));
-        Classroom classroom2 = new Classroom(teachers.get(1));
-        Classroom classroom3 = new Classroom(teachers.get(2));
+        Classroom classroom1 = new Classroom(teachers.get(0), teachers.get(1));
+        Classroom classroom2 = new Classroom(teachers.get(1), teachers.get(2));
+        Classroom classroom3 = new Classroom(teachers.get(0), teachers.get(2));
         classroomManager.addClassroom(classroom1);
         classroomManager.addClassroom(classroom2);
         classroomManager.addClassroom(classroom3);
@@ -38,6 +38,7 @@ public class Main {
             System.out.printf("%-30s %-30s\n", "2. Sửa thông tin học viên", "6. Bắt đầu một lớp học");
             System.out.printf("%-30s %-30s\n", "3. Xem học viên từng lớp", "7. Thêm học viên bỏ học");
             System.out.printf("%-30s %-30s\n", "4. Xem tất cả học viên", "8. Danh sách học viên bỏ học");
+            System.out.printf("%-30s %-30s\n", "", "9. Danh sách học viên từng giáo viên");
             System.out.println("                        0. Thoát ");
             System.out.print("Chọn chức năng: ");
             try {
@@ -196,10 +197,11 @@ public class Main {
                                         : "Chưa có";
                                 // Check no student no start class
                                 String endIfEmpty = soLuongHocVien == 0 ? "Chưa bắt đầu" : classroom.getStatus();
-                                System.out.println("STT: " + classroom.getClassroomId() +
-                                        ", Giáo viên: " + classroom.getTeacher().getName() +
+                                System.out.println(" - Lớp: " + classroom.getClassroomId() +
+                                        ", Giáo viên 1 : " + classroom.getTeacher().getFirst().getName() +
+                                        ", Giáo viên 2 : " + classroom.getTeacher().getLast().getName() +
                                         ", Trạng thái: " + endIfEmpty +
-                                        ", Số lượng học viên: " + soLuongHocVien + " / 5" +
+                                        ", Số lượng học viên: " + soLuongHocVien + " / 10" +
                                         ", Ngày bắt đầu: " + startDateInfo);
                             }
                         }
@@ -247,6 +249,22 @@ public class Main {
                                         + " - Mã lớp: " + absentStudent.getClassRoom()
                                         + " - Lý do: " + absentStudent.getReason()
                                         + " - Ngày bỏ học: " + absentStudent.getDateExit().format(formatter));
+                            }
+                        }
+                        break;
+                    case 9: // Students of each Teacher
+                        for (Teacher teacher : teachers) {
+                            System.out.println("\nDanh sách học viên của giáo viên: " + teacher.getName() + ": ");
+                            List<Student> studentsOfTeacher = new ArrayList<>();
+                            for (Classroom classroom : teacher.getTeachingClasses()) {
+                                studentsOfTeacher.addAll(classroom.getStudents());
+                            }
+                            if (studentsOfTeacher.isEmpty()) {
+                                System.out.println("Chưa có học viên nào.");
+                            } else {
+                                for (Student student : studentsOfTeacher) {
+                                    System.out.println("- " + student);
+                                }
                             }
                         }
                         break;

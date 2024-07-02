@@ -17,6 +17,9 @@ public class StudentManager implements StudentManagement {
         this.classroomManager = classroomManager;
     }
 
+     /*
+      * addStudent - Add student in class
+      */
     @Override
     public void addStudent(Student student) {
         if (isValidAge(student.getBirthDate()) && !isDuplicateIdNumber(student.getIdNumber())) {

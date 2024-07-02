@@ -1,10 +1,19 @@
 package vn.edu.likelion.models;
 
-public class Teacher {
-    private String name;
+import java.util.ArrayList;
+import java.util.List;
 
+public class Teacher {
+    private static int nextTeacherId = 1;
+    private String teacherId;
+    private String name;
+    private List<Classroom> teachingClasses; // List class of Teacher
+
+    // Constructor
     public Teacher(String name) {
+        this.teacherId = "GV" + nextTeacherId++;
         this.name = name;
+        this.teachingClasses = new ArrayList<>();
     }
 
     public String getName() {
@@ -15,9 +24,24 @@ public class Teacher {
         this.name = name;
     }
 
-    // Phương thức toString
+    public String getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(String teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public List<Classroom> getTeachingClasses() {
+        return teachingClasses;
+    }
+
+    public void addTeachingClass(Classroom classroom) {
+        teachingClasses.add(classroom);
+    }
+
     @Override
     public String toString() {
-        return "Tên: " + name;
+        return "Mã giáo viên: " + teacherId + ", Tên: " + name;
     }
 }

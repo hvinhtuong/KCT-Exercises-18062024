@@ -11,15 +11,6 @@ public class Student {
     private LocalDate enrollmentDate;
     private Classroom classroom;
 
-    public Student(String name, LocalDate birthDate, String idNumber, String studentId, LocalDate enrollmentDate, Classroom classroom) {
-        this.name = name;
-        this.birthDate = birthDate;
-        this.idNumber = idNumber;
-        this.studentId = studentId;
-        this.enrollmentDate = enrollmentDate;
-        this.classroom = classroom;
-    }
-
     public Student(String name, LocalDate birthDate, String idNumber, Classroom classroom) {
         this.name = name;
         this.birthDate = birthDate;
