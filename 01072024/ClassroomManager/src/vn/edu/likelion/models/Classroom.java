@@ -52,10 +52,12 @@ public class Classroom {
         teacher2.addTeachingClass(this);
     }
 
+    // Check maximum student in class
     public boolean isFull() {
         return (students.size() == 10);
     }
 
+    // Add student
     public void addStudent(Student student) {
         if (!isFull()) {
             students.add(student);
@@ -64,6 +66,7 @@ public class Classroom {
         }
     }
 
+    // Remove Student
     public void removeStudent(Student student) {
         students.remove(student);
     }
