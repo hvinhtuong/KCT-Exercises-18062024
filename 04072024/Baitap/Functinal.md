@@ -15,13 +15,6 @@
     System.out.println(lengths); // Output: [4, 10, 9]
 
     ```
-
-    Hãy [thận trọng](/faq#coding) khi sử dụng các đoạn mã.
-
-    content_copy
-
-    *Hãy thận trọng khi sử dụng các đoạn mã.*
-
     -   **2\. Predicate<T>**
 
     Predicate nhận một đầu vào kiểu T và trả về một giá trị boolean. Chúng ta sử dụng Predicate để lọc các phần tử trong danh sách dựa trên một điều kiện.
@@ -38,13 +31,6 @@
     System.out.println(longStrings); // Output: [Functional, Interface]
 
     ```
-
-    Hãy [thận trọng](/faq#coding) khi sử dụng các đoạn mã.
-
-    content_copy
-
-    *Hãy thận trọng khi sử dụng các đoạn mã.*
-
     -   **3\. Consumer<T>**
 
     Consumer nhận một đầu vào kiểu T và không trả về giá trị. Chúng ta sử dụng Consumer để thực hiện một hành động trên từng phần tử của danh sách.
@@ -57,13 +43,6 @@
     lengths.forEach(printLengthConsumer); // Output: 4 10 9
 
     ```
-
-    Hãy [thận trọng](/faq#coding) khi sử dụng các đoạn mã.
-
-    content_copy
-
-    *Hãy thận trọng khi sử dụng các đoạn mã.*
-
     -   **4\. Supplier<T>**
 
     Supplier không nhận đầu vào và trả về một giá trị kiểu T. Chúng ta sử dụng Supplier để tạo ra một danh sách mới từ một nguồn dữ liệu khác.
