@@ -3,8 +3,8 @@ package Bai1;
 import java.util.Arrays;
 
 public class Solution {
-   static ListNode list = new ListNode(0, new ListNode(1, new ListNode(2, new ListNode(3,
-            new ListNode(4, new ListNode(5, new ListNode(6)))))));
+   static ListNode list = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4,
+            new ListNode(5, new ListNode(6, new ListNode(7)))))));
 
     public static ListNode middleNode(ListNode head) {
         ListNode node = head;
@@ -15,11 +15,11 @@ public class Solution {
         }
         int mid = count / 2;
         if (mid % 2 == 0) {
-            for (int i = 0; i < mid; i++) {
+            for (int i = 0; i < mid-1; i++) {
                 head = head.next;
             }
         } else {
-            for (int i = 0; i <= mid; i++) {
+            for (int i = 0; i <= mid-1; i++) {
                 head = head.next;
             }
         }
@@ -27,7 +27,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[] {1,2,3,4,5,6};
+        int[] arr = new int[] {1,2,3,4,5,6,7};
         System.out.println("Your list: " + Arrays.toString(arr));
         System.out.println("Out put: " + middleNode(list).val);
         System.out.println("Explanation: The middle node of the list is: " + middleNode(list).val);
