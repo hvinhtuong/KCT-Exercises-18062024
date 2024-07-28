@@ -1,3 +1,10 @@
+
+
+
+![alt]([http://~](https://drive.google.com/file/d/1dTJapOrIJoQ7NGmuS_CCcPAZGwANUIGe/view?usp=sharing))
+
+
+
 ----------------------------------WAREHOUSE MANAGER-----------------------------------
 
 - Admin có quyền CRUD user, warehouse, xem sanh sách sản phẩm
@@ -21,4 +28,3 @@
 - User xuất báo cáo thống kê tổng số lượng sp trong mỗi kho ra excel
 
 - Admin xuất báo cáo thống kê tổng SL sp trong toàn kho ra excel
-![alt]([http://~](https://drive.google.com/file/d/1dTJapOrIJoQ7NGmuS_CCcPAZGwANUIGe/view?usp=sharing))
