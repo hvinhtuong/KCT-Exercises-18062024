@@ -21,3 +21,4 @@
 - User xuất báo cáo thống kê tổng số lượng sp trong mỗi kho ra excel
 
 - Admin xuất báo cáo thống kê tổng SL sp trong toàn kho ra excel
+![alt]([http://~](https://drive.google.com/file/d/1dTJapOrIJoQ7NGmuS_CCcPAZGwANUIGe/view?usp=sharing))
